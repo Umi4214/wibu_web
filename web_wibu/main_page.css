@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+main {
+    display: flex;
+    max-width: 1200px; /* hoặc bất kỳ giá trị nào phù hợp với thiết kế của bạn */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+article {
+    flex: 0 0 calc(100% - 270px); /* 250px cho aside + 20px cho padding */
+    max-width: calc(100% - 270px);
+    margin-right: 20px;
+}
+
+aside {
+    flex: 0 0 250px;
+    width: 250px;
+}
+
+/* Khi aside được fixed */
+main.aside-fixed-active {
+    padding-right: 270px; /* 250px cho aside + 20px cho padding */
+}
+
+.aside-fixed {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    right: 20px; /* Để phù hợp với padding của main */
+    width: 250px;
+}
+  
+  aside a {
+    display: block;
+    float: left;
+    width: 50%;
+  }
+
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #055b20;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px; /* Điều chỉnh kích thước logo */
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items > * {
+    margin-left: 20px;
+}
+
+.search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px 15px;
+    width: 200px;
+}
+
+.search-bar button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.notifications, .settings, .theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Thêm styles cho hover effects */
+.notifications:hover, .settings:hover, .theme-toggle:hover {
+    color: #ddd;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.theme-toggle-dark,
+.theme-toggle-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-dark {
+    opacity: 1;
+}
+
+.theme-toggle-light {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.banner {
+    width: 100%;
+    height: 600px; /* Chiều cao theo yêu cầu */
+    max-height: 1080px;
+    max-width: 1600px; /* Chiều rộng tối đa theo yêu cầu */
+    margin: 0 auto; /* Căn giữa banner */
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ngăn nội dung tràn ra ngoài */
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.content {
+    padding: 20px;
+    margin-top: 60px; /* Để không bị che bởi top-nav */
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.book {
+    width: calc(16.666% - 10px);
+    margin-bottom: 20px;
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: #222;
+    color: #fff;
+}
+
+body.dark-theme .top-nav {
+    background-color: #111;
+}
+
+body.dark-theme .theme-toggle-dark {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+body.dark-theme .theme-toggle-light {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+}
+
+/* Thêm styles cho các phần tử khác trong dark theme */
+body.dark-theme .search-bar input {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-theme .search-bar button {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-theme .notifications,
+body.dark-theme .settings,
+body.dark-theme .theme-toggle {
+    color: #fff;
+}
+
+.settings {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.settings:hover {
+    transform: rotate(45deg);
+}
+
+/* Trong dark theme */
+body.dark-theme .settings {
+    color: #ddd;
+}
+
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.sidebar-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.sidebar-nav a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-nav a:hover {
+    color: #055b20;
+}
+
+/* Dark theme styles */
+body.dark-theme aside {
+    background-color: #333;
+    border-left-color: #444;
+}
+
+body.dark-theme .sidebar-nav a {
+    color: #fff;
+}
+
+body.dark-theme .sidebar-nav a:hover {
+    color: #4CAF50;
+}
